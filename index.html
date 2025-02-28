@@ -1,70 +1,482 @@
-<html>
-<style>
-body {
-   margin: 0;
-   padding: 0;
-   font-family: Arial, sans-serif;
-}
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.hero {
-   position: relative;
-   height: 100vh;
-   background: grey no-repeat center center fixed;
-   background-size: cover;
-}
+      <!--=============== FAVICON ===============-->
+      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
-.overlay {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   text-align: center;
-}
+      <!--=============== REMIXICONS ===============-->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
 
-.overlay h1 {
-   font-size: 4em;
-   text-transform: uppercase;
-   letter-spacing: 0.2em;
-}
+      <!--==================== SWIPER CSS ====================-->
+      <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
-.progress-bar {
-   margin: 2em 0;
-   width: 100%;
-   height: 2em;
-   background: #fff;
-}
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="assets/css/styles.css">
 
-.progress {
-   height: 100%;
-   background: #0099ff;
-   width: 70%;
-}
+      <title>Kunal Purandare</title>
+   </head>
+   <body>
+      <!--==================== HEADER ====================-->
+      <header class="header" id="header">
+         <nav class="nav container">
+            <a href="#" class="nav__logo">
+               Kunal <span>Purandare</span>
+            </a>
 
-.social-icons {
-   display: flex;
-   justify-content: center;
-}
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                  <li class="nav__item">
+                     <a href="#home" class="nav__link active-link">Home</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#about" class="nav__link">About Me</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#experience" class="nav__link">Experience</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#skills" class="nav__link">Skills</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#certificates" class="nav__link">Certificates</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#contact" class="nav__link">Contact</a>
+                  </li>
+               </ul>
 
-.icon {
-   width: 2em;
-   height: 2em;
-   margin: 0 0.5em;
-   background: #fff;
-   border: 1px solid #000;
-   border-radius: 50%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-</style>
-<body>
-   <div class="hero">
-       <div class="overlay">
-           <h1>Coming Soon</h1>
-           <div class="progress-bar">
-               <div class="progress">70%</div>
-           </div>
-       </div>
-   </div>
-</body>
+               <!-- Close -->
+               <div class="nav__close" id="nav-close">
+                  <i class="ri-close-line"></i>
+               </div>
+            </div>
+
+
+            <!-- Toggle -->
+            <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line"></i>
+            </div>
+         </nav>
+      </header>
+
+      <!--==================== MAIN ====================-->
+      <main class="main">
+         <!--==================== HOME ====================-->
+         <section class="home section" id="home">
+            <div class="home__container container grid">
+               <div class="home__content">
+                  <div class="home__data">
+                     <h3 class="home__subtitle">
+                         Hello, <span>I'm</span>
+                     </h3>
+                     <h1 class="home__title">
+                         Kunal Purandare
+                     </h1>
+                     <h3 class="home__subtitle">
+                         Software Engineer
+                     </h3>
+                     <p class="home__description">
+                         A passionate and skilled developer dedicated to building innovative solutions that solve real-world problems.
+                         I specialize in developing scalable, high-performance applications that deliver exceptional user experiences.
+                     </p>
+                 </div>
+
+                  <div class="home__social">
+                     <a href="https://www.facebook.com/kunalpurandare17" target="_blank"  class="home__social-link">
+                        <i class="ri-facebook-fill"></i>
+                     </a>
+                     <a href="https://www.instagram.com/galaxy__moments/profilecard/?igsh=bXI0dnloeTduaHJt" target="_blank" class="home__social-link">
+                        <i class="ri-instagram-line"></i>
+                     </a>
+                     <a href="https://www.linkedin.com/in/kunal-purandare-a37611165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="home__social-link">
+                        <i class="ri-linkedin-box-line"></i>
+                     </a>
+                  </div>
+               </div>  
+
+               <div class="home__image">
+                  <svg class="home__blob" viewBox="0 0 550 591" xmlns="http://www.w3.org/2000/svg">
+                     <mask id="maskBlob" mask-type="alpha">
+                        <path d="M263 47.1782C270.426 42.891 279.574 42.891 287 47.1782L501.157 
+                        170.822C508.583 175.109 513.157 183.032 513.157 191.606V438.894C513.157 
+                        447.468 508.583 455.391 501.157 459.678L287 583.322C279.574 587.609 270.426 
+                        587.609 263 583.322L48.843 459.678C41.4174 455.391 36.843 447.468 36.843 
+                        438.894V191.606C36.843 183.032 41.4174 175.109 48.843 170.822L263 47.1782Z"/>
+                     </mask>
+                     <g mask="url(#maskBlob)"> 
+                        <path d="M263 47.1782C270.426 42.891 279.574 42.891 287 47.1782L501.157 
+                        170.822C508.583 175.109 513.157 183.032 513.157 191.606V438.894C513.157 
+                        447.468 508.583 455.391 501.157 459.678L287 583.322C279.574 587.609 270.426 
+                        587.609 263 583.322L48.843 459.678C41.4174 455.391 36.843 447.468 36.843 
+                        438.894V191.606C36.843 183.032 41.4174 175.109 48.843 170.822L263 47.1782Z"/>
+                  
+                        <rect x="37" width="476" height="630" fill="url(#pattern0)"/>
+                     </g>
+                  
+                     <rect x="37" width="476" height="300" fill="url(#pattern1)"/>
+                  
+                     <defs>
+                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                           <use href="#imageBlob" transform="matrix(0.00143057 0 0 0.00108108 0.0404062 0)"/>
+                        </pattern>
+                  
+                        <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
+                           <use href="#imageBlob" transform="matrix(0.00143057 0 0 0.00226984 0.0404062 0)"/>
+                        </pattern>
+                  
+                        <!-- Insert your profile (recommended size: 640 x 940) -->
+                        <image class="home__img" id="imageBlob" width="640" height="925" href="assets/img/home.png"/>
+                        </defs>
+                     
+                        <!-- <defs> 
+                           <clipPath id="circleClip">
+                              <circle cx="275" cy="295.5" r="275" />
+                           </clipPath>
+                        </defs>
+                        <image class="home__img" id="imageBlob" href="assets/img/profile-pic.jpg" width="550" height="800" preserveAspectRatio="xMidYMid slice" clip-path="url(#circleClip)" /> --> -->
+                  </svg>
+               </div>
+
+               <div id="lampadario">
+                  <input type="radio" name="switch" value="on"  checked="checked" />
+                  <input type="radio" name="switch" value="off"/>
+                  <label for="switch"></label>
+                  <div id="filo"></div>
+                  <div id="lampadina">             
+                    <div id="sorpresa">
+                      <!-- <div id="footer">
+                        You turned me on!
+                      </div>
+                      <div id="shadow">
+                          You turned me on!
+                      </div> -->
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+         </section>
+
+         <!--==================== ABOUT ====================-->
+         <section class="about section" id="about">
+            <div class="about__container container grid">
+               <div class="about__data">
+                  <h3 class="section__subtitle about__subtitle">
+                     My <span>Introduction</span>
+                  </h3>
+
+                  <h2 clh2s="section__title">
+                     About Me
+                  </h2>
+
+                  <p class="about__description">
+                     A software engineer with a passion for crafting efficient, scalable, and user-friendly software. With a strong foundation in Angular/Python and AWS, I have worked on diverse projects, from web applications to complex backend systems, always focused on delivering high-quality results. I’m driven by solving challenging problems and continuously improving my certificates. Whether it’s optimizing performance, enhancing user interfaces, or collaborating with cross-functional teams.
+                  </p>
+                  <div class="about__info">
+                     <div>
+                         <span class="about__info-title">05+</span>
+                         <span class="about__info-name">Year's of Industry<br>Experience</span>
+                     </div>
+                     <div>
+                         <span class="about__info-title">10+</span>
+                         <span class="about__info-name">Enterprise<br>Application exp.</span>
+                     </div>
+                     <div>
+                         <span class="about__info-title">05+</span>
+                         <span class="about__info-name">Known<br>Tech Frameworks</span>
+                     </div>
+                 </div>
+                 <div class="about__buttons">
+                     <a download="" href="assets/pdf/cv-juliana.pdf" class="button button--flex">
+                         Download CV <i class="uil uil-download-alt button__icon"></i>
+                     </a>
+                 </div>
+               </div>
+
+               <div class="about__image">
+                  <svg class="about__blob" viewBox="0 0 550 550" xmlns="http://www.w3.org/2000/svg">
+                     <!-- Define the circular clip path -->
+                     <defs>
+                        <clipPath id="circleClip">
+                           <circle cx="275" cy="275" r="400" />
+                        </clipPath>
+                     </defs>
+
+                     <!-- Circular image -->
+                     <image class="about__img" href="assets/img/about.png" width="450" height="450" preserveAspectRatio="xMidYMid slice" clip-path="url(#circleClip)"/>
+                  </svg>
+               </div>
+            </div>
+         </section>
+         
+         <!--==================== Experience ====================-->
+         <section class="experience section" id="experience">
+            <h3 class="section__subtitle">My personal journey</h3>
+            <h2 class="section__title">Experience</h2>
+
+            <div class="experience__container container">
+                <div class="experience__tabs">
+                    <div class="experience__button button-flex experience__active" data-target="#qualification">
+                        <i class='bx bxs-graduation experience__icon'></i>
+                        Qualification
+                    </div>
+                    <div class="experience__button button-flex" data-target="#work">
+                        <i class='bx bx-briefcase experience__icon'></i>
+                        Work
+                    </div>
+                </div>
+
+                <div class="experience__sections">
+                    <div class="experience__content experience__active" data-content id="qualification">
+                        <div class="experience__data">
+                            <div>
+                                <h3 class="experience__title">CDAC - PGDAC</h3>
+                                <span class="experience__subtitle">Post Graduate Diploma in Advance Computing</span>
+                                <span class="experience__subtitle">D.Y.Patil, Akurdi, Pune</span>
+                                <div class="experience__calendar">
+                                    <i class='bx bxs-calendar'></i>
+                                    2018-2019
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="experience__rounder"></span>
+                                <span class="experience__line"></span>
+                            </div>
+                        </div>
+                        <div class="experience__data">
+                            <div></div>
+
+                            
+                            <div>
+                                <span class="experience__rounder"></span>
+                                <span class="experience__line"></span>
+                            </div>
+
+                            <div>
+                                <h3 class="experience__title">B.E -  Bachelor Degree </h3>
+                                <span class="experience__subtitle">E & TC</span>
+                                <span class="experience__subtitle">Smt. Kashibai Navale College of Engg., Sinhgad Campus, Pune</span>
+                                <div class="experience__calendar">
+                                    <i class='bx bxs-calendar'></i>
+                                    2014-2018
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="experience__content" data-content id="work">
+                        <div class="experience__data">
+                            <div>
+                                <h3 class="experience__title">Senior Software Engineer </h3>
+                                <span class="experience__subtitle">Morningstar India Pvt. Ltd., Navi Mumbai</span>
+                                <div class="experience__calendar">
+                                    <i class='bx bxs-calendar'></i>
+                                    2023
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="experience__rounder"></span>
+                                <span class="experience__line"></span>
+                            </div>
+                        </div>
+                        <div class="experience__data">
+                            <div></div>
+
+                            
+                            <div>
+                                <span class="experience__rounder"></span>
+                                <span class="experience__line"></span>
+                            </div>
+
+                            <div>
+                                <h3 class="experience__title">Software Engineer</h3>
+                                <span class="experience__subtitle">Morningstar India Pvt. Ltd., Navi Mumbai</span>
+                                <div class="experience__calendar">
+                                    <i class='bx bxs-calendar'></i>
+                                    2021-2023
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="experience__data">
+                            <div>
+                                <h3 class="experience__title">Associate Software Engineer</h3>
+                                <span class="experience__subtitle">Morningstar India Pvt. Ltd., Navi Mumbai</span>
+                                <div class="experience__calendar">
+                                    <i class='bx bxs-calendar'></i>
+                                    2019-2021
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="experience__rounder"></span>
+                                <span class="experience__line"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </section>
+
+         <!--==================== skills ====================-->
+         <section class="skills section" id="skills">
+            <h3 class="section__subtitle">
+               My <span>Job</span>
+            </h3>
+
+            <h2 class="section__title">
+               Full Stack Developer
+            </h2>
+
+            <div class="skills__container container grid">
+               <article class="skills__card">
+                  <i class="ri-code-s-slash-line skills__icon"></i>
+                  <h2 class="skills__title">Frontend</h2>
+                  <p class="skills__description">
+                     Frontend Developer expertise in building dynamic, user-centric web applications using modern technologies.                     
+                  </p>
+               </article>
+
+               <article class="skills__card">
+                  <i class="ri-global-line skills__icon"></i>
+                  <h2 class="skills__title">Backend</h2>
+                  <p class="skills__description">
+                     Seasoned Backend Developer skilled in designing and developing scalable, robust server-side architectures,
+                     optimizing RESTful APIs, managing databases, and deliver high-performance applications.                  
+                  </p>
+               </article>
+
+               <article class="skills__card">
+                  <i class="ri-cloud-line skills__icon"></i>
+                  <h2 class="skills__title">AWS</h2>
+                  <p class="skills__description">
+                     AWS-certified professional with hands-on experience in architecting scalable, secure, and cost-effective cloud solutions..
+                  </p>
+               </article>
+            </div>
+         </section>
+
+         <!--==================== Certificates ====================-->
+         <section class="certificates section">
+            <!-- <img class="about__img" src="assets/img/awards.png" width="50%"/> -->
+            <div class="certificates__container container grid">
+               <div class="certificates__data">
+                  <h3 class="section__subtitle certificates__subtitle">
+                     <span>Awards & Certificates</span>
+                  </h3>
+
+                  <h2 class="section__title certificates__title">
+                     Awards
+                  </h2>
+
+                  <p class="certificates__description">
+                     See what are my achievements
+                      and certificates earned.
+                  </p>
+
+                  <a href="https://www.linkedin.com/in/kunal-purandare-a37611165/details/certifications/" target="_blank" class="button">See certificates</a>
+               </div>
+
+               <div class="certificates__content">
+                  <ol class="certificates__group">
+                     <li class="certificates__item">AWS Certified Developer Associate.</li>
+                     <li class="certificates__item">Winner of Hackathon conducted in company.</li>
+                     <li class="certificates__item">10+ Awards for Employee of the month and <b>Star of the Quarter.</li>
+                  </ol>
+               </div>
+
+            </div>
+         </section>
+
+         <!--==================== CONTACT ====================-->
+         <section class="contact section" id="contact">
+            <h3 class="section__subtitle">
+                  Get In <span>Touch</span>
+            </h3>
+
+            <h2 class="section__title">
+                  Contact Me
+            </h2>
+
+            <div class="contact__container container grid">
+                  <form class="contact__form" id="contact-form">
+                     <div class="contact__group">
+                        <input type="text" name="from_name" required placeholder="Enter your name" class="contact__input">
+                        <input type="email" name="from_email" required placeholder="Enter your email" class="contact__input">
+                     </div>
+
+                     <textarea name="user_project"  required placeholder="Enter your message" class="contact__input"></textarea>
+                     <p class="contact__message" id="contact-message"></p>
+                     <div class="g-recaptcha captcha__button" data-sitekey="6LcuUuUqAAAAAFXKW674ZCeZJ5oGPPuwz3HM0sbK" ></div>
+                     <button type="submit" class="button contact__button">
+                        Send Message
+                     </button>
+                  </form>
+            </div>
+         </section>
+      </main>
+
+      <!--==================== FOOTER ====================-->
+      <footer class="footer">
+         <div class="footer__container container grid">
+            <div>
+               <!-- <h1 class="footer__title">
+                  Kunal <span>Purandare</span>
+               </h1> -->
+
+               <h2 class="footer__education">
+                  "In order to be irreplaceable, one must always be different." 
+               </h2>
+            </div>
+
+            <div class="footer__social">
+               <a href="https://www.facebook.com/kunalpurandare17" target="_blank" class="footer__social-link">
+                  <i class="ri-facebook-circle-line"></i>
+               </a>
+
+               <a href="https://www.instagram.com/galaxy__moments/profilecard/?igsh=bXI0dnloeTduaHJt" target="_blank" class="footer__social-link">
+                  <i class="ri-github-fill"></i>
+               </a>
+
+               <a href="https://www.linkedin.com/in/kunal-purandare-a37611165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="home__social-link">
+                  <i class="ri-linkedin-box-line"></i>
+               </a>
+            </div>
+
+            <span class="footer__copy">
+               &#169; Kunal Purandare. All right reserved
+            </span>
+         </div>
+      </footer>
+
+      <!--========== SCROLL UP ==========-->
+      <a href="#" class="scrollup" id="scroll-up">
+         <i class="ri-arrow-up-line"></i>
+      </a>
+
+      <!--==================== SWIPER JS ====================-->
+      <script src="assets/js/swiper-bundle.min.js"></script>
+      <!--=============== SCROLLREVEAL ===============-->
+      <script src="assets/js/scrollreveal.min.js"></script>
+      <!--=============== RECAPTCHA ===============-->
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      <!--=============== EMAIL JS ===============-->
+      <script type="text/javascript"
+         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+      </script>
+      <script type="text/javascript">
+      (function(){
+         emailjs.init({
+            publicKey: "k3pm0SEIo95a0ddkP",
+         });
+      })();
+      </script>
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+   </body>
 </html>
