@@ -418,58 +418,56 @@ body.dark-theme{
   justify-content: center;
 }
 
-/*=============== certificates & CERTS ===============*/
+/*=============== Certificates===============*/
 .certificates{
   background-color: var(--container-color);
 }
 
-.certificates__container, .certificates__container{
+.certificates__container{
   padding-bottom: 2rem;
   row-gap: 3.5rem;
 }
 
-.certificates__subtitle, .certificates__title, .certificates__title, .certificates__subtitle{
+.certificates__title, .certificates__subtitle{
   text-align: left;
 }
 
-.certificates__data, .certificates__data{
+.certificates__data{
   text-align: center;
 }
 
-.certificates__description, .certificates__description{
+.certificates__description{
   margin-bottom: 2rem;
 }
 
 .certificates__description{
   text-align: justify;
-  margin-right: 55px;
+  /* margin-right: 55px; */
 }
 
 .certificates__content, 
-.certificates__group,
-.certificates__content,
 .certificates__group{
   display: grid;
 }
 
-.certificates__content, .certificates__content{
+.certificates__content{
   grid-template-columns: repeat(2, max-content);
   column-gap: 4rem;
   justify-content: center;
   align-items: baseline;
 }
 
-.certificates__group, .certificates__group{
+.certificates__group{
   row-gap: 1rem;
   list-style: decimal-leading-zero;
 }
 
-.certificates__item, .certificates__item{
+.certificates__item{
   font-weight: var(--font-medium);
   color: var(--title-color);
 }
 
-.certificates__item::marker , .certificates__item::marker{
+.certificates__item::marker{
   color: var(--first-color);
 }
 
@@ -865,7 +863,7 @@ body.dark-theme{
     margin-inline: 1rem;
   }
   
-  .certificates__content, .certificates__content{
+  .certificates__content{
     grid-template-columns: max-content;
     row-gap: 1rem;
   }
@@ -876,9 +874,7 @@ body.dark-theme{
 
   .about__subtitle,
   .certificates__subtitle, 
-  .certificates__title, 
-  .certificates__title, 
-  .certificates__subtitle{
+  .certificates__title{
     text-align: center;
   }
 }
@@ -890,7 +886,6 @@ body.dark-theme{
   .certificates__container,
   .skills__container,
   .projects__container,
-  .certificates__container,
   .contact__container{
     grid-template-columns: 360px;
     justify-content: center;
@@ -904,7 +899,6 @@ body.dark-theme{
 
   .home__container,
   .about__container,
-  .certificates__container,
   .certificates__container{
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -912,9 +906,8 @@ body.dark-theme{
 
   .home__data,
   .about__data,
-  .certificates__data,
   .certificates__data
-  :is(.about__data, .certificates__data, .certificates__data) :is(.section__subtitle, .section__title){
+  :is(.about__data, .certificates__data) :is(.section__subtitle, .section__title){
     text-align: initial;
   }
 
@@ -937,16 +930,14 @@ body.dark-theme{
     justify-content: center;
   }
 
-  .certificates__content, .certificates__content{
+  .certificates__content{
     grid-template-columns: repeat(2, max-content);
     row-gap: 1rem;
   }
 
   .about__subtitle,
   .certificates__subtitle, 
-  .certificates__title, 
-  .certificates__title, 
-  .certificates__subtitle{
+  .certificates__title{
     text-align: left;
   }
 }
@@ -1047,26 +1038,10 @@ body.dark-theme{
     margin-bottom: 3rem;
   }
 
-  .certificates__container, .certificates__container{
+  .certificates__container{
     grid-template-columns: 340px 425px;
     column-gap: 10rem;
     padding-bottom: 4rem;
-  }
-
-  .certificates__description{
-    margin-bottom: 3rem;
-  }
-
-  .certificates__content{
-    column-gap: 8rem;
-  }
-
-  .certificates__group{
-    row-gap: 1.5rem;
-  }
-
-  .certificates__item{
-    font-size: var(--h3-font-size);
   }
 
   .skills__container{
