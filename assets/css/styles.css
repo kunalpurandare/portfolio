@@ -440,10 +440,10 @@ body.dark-theme{
   margin-bottom: 2rem;
 }
 
-.certificates__description{
+/* .certificates__description{
   text-align: justify;
-  /* margin-right: 55px; */
-}
+  margin-right: 55px;
+} */
 
 .certificates__content, 
 .certificates__group{
@@ -935,9 +935,9 @@ body.dark-theme{
     row-gap: 1rem;
   }
 
-  .about__subtitle,
-  .certificates__subtitle, 
-  .certificates__title{
+  .about__subtitle
+  /* ,.certificates__title,.certificates__subtitle */
+  {
     text-align: left;
   }
 }
