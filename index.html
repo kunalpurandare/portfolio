@@ -3,6 +3,22 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Portfolio of Kunal Purandare, a software engineer and full stack developer building scalable applications, automation platforms, and cloud solutions.">
+      <meta name="robots" content="index, follow">
+      <meta name="theme-color" content="#071417">
+      <link rel="canonical" href="https://kunalpurandare.is-a.dev/">
+
+      <meta property="og:type" content="website">
+      <meta property="og:site_name" content="Kunal Purandare">
+      <meta property="og:title" content="Kunal Purandare — Software Engineer">
+      <meta property="og:description" content="Software engineer and full stack developer focused on scalable applications, automation, and cloud solutions.">
+      <meta property="og:url" content="https://kunalpurandare.is-a.dev/">
+      <meta property="og:image" content="https://kunalpurandare.is-a.dev/assets/img/home.png">
+      <meta property="og:image:alt" content="Kunal Purandare portfolio portrait">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="Kunal Purandare — Software Engineer">
+      <meta name="twitter:description" content="Software engineer and full stack developer focused on scalable applications, automation, and cloud solutions.">
+      <meta name="twitter:image" content="https://kunalpurandare.is-a.dev/assets/img/home.png">
 
       <!--=============== FAVICON ===============-->
       <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
@@ -14,8 +30,24 @@
       <link rel="stylesheet" href="assets/css/styles.css">
 
       <title>Kunal Purandare</title>
+      <script type="application/ld+json">
+      {
+         "@context": "https://schema.org",
+         "@type": "Person",
+         "name": "Kunal Purandare",
+         "url": "https://kunalpurandare.is-a.dev/",
+         "image": "https://kunalpurandare.is-a.dev/assets/img/home.png",
+         "jobTitle": "Software Engineer",
+         "sameAs": [
+            "https://www.linkedin.com/in/kunal-purandare-a37611165",
+            "https://www.facebook.com/kunalpurandare17",
+            "https://www.instagram.com/galaxy__moments/"
+         ]
+      }
+      </script>
    </head>
    <body>
+      <a class="skip-link" href="#main-content">Skip to main content</a>
       <div class="ambient-scene" aria-hidden="true">
          <div class="ambient-grid"></div>
          <div class="ambient-orb ambient-orb--one"></div>
@@ -72,21 +104,21 @@
                </ul>
 
                <!-- Close -->
-               <div class="nav__close" id="nav-close">
+               <button class="nav__close" id="nav-close" type="button" aria-label="Close navigation menu">
                   <i class="ri-close-line"></i>
-               </div>
+               </button>
             </div>
 
 
             <!-- Toggle -->
-            <div class="nav__toggle" id="nav-toggle">
+            <button class="nav__toggle" id="nav-toggle" type="button" aria-label="Open navigation menu" aria-controls="nav-menu" aria-expanded="false">
                <i class="ri-menu-line"></i>
-            </div>
+            </button>
          </nav>
       </header>
 
       <!--==================== MAIN ====================-->
-      <main class="main">
+      <main class="main" id="main-content">
          <!--==================== HOME ====================-->
          <section class="home section" id="home">
             <div class="home__container container grid">
@@ -113,13 +145,13 @@
                  </div>
 
                   <div class="home__social">
-                     <a href="https://www.facebook.com/kunalpurandare17" target="_blank" aria-label="Facebook" class="home__social-link">
+                     <a href="https://www.facebook.com/kunalpurandare17" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="home__social-link">
                         <i class="ri-facebook-fill"></i>
                      </a>
-                     <a href="https://www.instagram.com/galaxy__moments/profilecard/?igsh=bXI0dnloeTduaHJt" target="_blank" aria-label="Instagram" class="home__social-link">
+                     <a href="https://www.instagram.com/galaxy__moments/profilecard/?igsh=bXI0dnloeTduaHJt" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="home__social-link">
                         <i class="ri-instagram-line"></i>
                      </a>
-                     <a href="https://www.linkedin.com/in/kunal-purandare-a37611165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn" class="home__social-link">
+                     <a href="https://www.linkedin.com/in/kunal-purandare-a37611165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="home__social-link">
                         <i class="ri-linkedin-box-line"></i>
                      </a>
                   </div>
@@ -163,8 +195,8 @@
                </div>
 
                <div id="lampadario">
-                  <input type="radio" name="switch" value="on"  checked="checked" />
-                  <input type="radio" name="switch" value="off"/>
+                  <input type="radio" name="switch" value="on" aria-label="Use dark theme" checked="checked" />
+                  <input type="radio" name="switch" value="off" aria-label="Use light theme" />
                   <label for="switch"></label>
                   <div id="filo"></div>
                   <div id="lampadina">             
@@ -199,7 +231,7 @@
                   </p>
                   <div class="about__info">
                      <div>
-                         <span class="about__info-title">05+</span>
+                         <span class="about__info-title">07+</span>
                          <span class="about__info-name">Years of Industry<br>Experience</span>
                      </div>
                      <div>
@@ -253,111 +285,68 @@
          <!--==================== Experience ====================-->
          <section class="experience section" id="experience">
             <h3 class="section__subtitle">My personal <span>journey</span></h3>
-            <h2 class="section__title">Experience</h2>
+            <h2 class="section__title">Experience &amp; Education</h2>
 
             <div class="experience__container container">
-                <div class="experience__tabs">
-                    <div class="experience__button button-flex" data-target="#qualification">
-                        <i class='bx bxs-graduation experience__icon'></i>
-                        Qualification
-                    </div>
-                    <div class="experience__button button-flex  experience__active" data-target="#work">
-                        <i class='bx bx-briefcase experience__icon'></i>
-                        Work
-                    </div>
-                </div>
+               <div class="journey" aria-label="Career and education timeline">
+                  <div class="journey__rail" aria-hidden="true"><span class="journey__progress"></span></div>
 
-                <div class="experience__sections">
-                    <div class="experience__content" data-content id="qualification">
-                        <div class="experience__data">
-                            <div>
-                                <h3 class="experience__title">CDAC - PGDAC</h3>
-                                <span class="experience__subtitle">Post Graduate Diploma in Advance Computing</span>
-                                <span class="experience__subtitle">D.Y.Patil, Akurdi, Pune</span>
-                                <div class="experience__calendar">
-                                    <i class='bx bxs-calendar'></i>
-                                    2018-2019
-                                </div>
-                            </div>
+                  <article class="journey__checkpoint" data-kind="Education">
+                     <div class="journey__marker" aria-hidden="true"><i class="ri-graduation-cap-line"></i></div>
+                     <div class="journey__card">
+                        <div class="journey__meta"><span>2014–2018</span><span>Education</span></div>
+                        <h3>B.E — Bachelor Degree</h3>
+                        <p>E &amp; TC</p>
+                        <p>Smt. Kashibai Navale College of Engg., Sinhgad Campus, Pune</p>
+                     </div>
+                  </article>
 
-                            <div>
-                                <span class="experience__rounder"></span>
-                                <span class="experience__line"></span>
-                            </div>
-                        </div>
-                        <div class="experience__data">
-                            <div></div>
+                  <article class="journey__checkpoint" data-kind="Education">
+                     <div class="journey__marker" aria-hidden="true"><i class="ri-graduation-cap-line"></i></div>
+                     <div class="journey__card">
+                        <div class="journey__meta"><span>2018–2019</span><span>Education</span></div>
+                        <h3>CDAC — PGDAC</h3>
+                        <p>Post Graduate Diploma in Advance Computing</p>
+                        <p>D.Y. Patil, Akurdi, Pune</p>
+                     </div>
+                  </article>
 
-                            
-                            <div>
-                                <span class="experience__rounder"></span>
-                                <span class="experience__line"></span>
-                            </div>
+                  <article class="journey__checkpoint" data-kind="Work">
+                     <div class="journey__marker" aria-hidden="true"><i class="ri-briefcase-line"></i></div>
+                     <div class="journey__card">
+                        <div class="journey__meta"><span>2019–2021</span><span>Work</span></div>
+                        <h3>Associate Software Engineer</h3>
+                        <p>Morningstar India Pvt. Ltd., Navi Mumbai</p>
+                     </div>
+                  </article>
 
-                            <div>
-                                <h3 class="experience__title">B.E -  Bachelor Degree </h3>
-                                <span class="experience__subtitle">E & TC</span>
-                                <span class="experience__subtitle">Smt. Kashibai Navale College of Engg., Sinhgad Campus, Pune</span>
-                                <div class="experience__calendar">
-                                    <i class='bx bxs-calendar'></i>
-                                    2014-2018
-                                </div>
-                            </div>
+                  <article class="journey__checkpoint" data-kind="Work">
+                     <div class="journey__marker" aria-hidden="true"><i class="ri-briefcase-line"></i></div>
+                     <div class="journey__card">
+                        <div class="journey__meta"><span>2021–2023</span><span>Work</span></div>
+                        <h3>Software Engineer</h3>
+                        <p>Morningstar India Pvt. Ltd., Navi Mumbai</p>
+                     </div>
+                  </article>
 
-                        </div>
-                    </div>
-                    <div class="experience__content experience__active" data-content id="work">
-                        <div class="experience__data">
-                            <div>
-                                <h3 class="experience__title">Senior Software Engineer </h3>
-                                <span class="experience__subtitle">Morningstar India Pvt. Ltd., Navi Mumbai</span>
-                                <div class="experience__calendar">
-                                    <i class='bx bxs-calendar'></i>
-                                    2023
-                                </div>
-                            </div>
+                  <article class="journey__checkpoint" data-kind="Work">
+                     <div class="journey__marker" aria-hidden="true"><i class="ri-briefcase-line"></i></div>
+                     <div class="journey__card">
+                        <div class="journey__meta"><span>2023–2025</span><span>Work</span></div>
+                        <h3>Senior Software Engineer</h3>
+                        <p>Morningstar India Pvt. Ltd., Navi Mumbai</p>
+                     </div>
+                  </article>
 
-                            <div>
-                                <span class="experience__rounder"></span>
-                                <span class="experience__line"></span>
-                            </div>
-                        </div>
-                        <div class="experience__data">
-                            <div></div>
-
-                            
-                            <div>
-                                <span class="experience__rounder"></span>
-                                <span class="experience__line"></span>
-                            </div>
-
-                            <div>
-                                <h3 class="experience__title">Software Engineer</h3>
-                                <span class="experience__subtitle">Morningstar India Pvt. Ltd., Navi Mumbai</span>
-                                <div class="experience__calendar">
-                                    <i class='bx bxs-calendar'></i>
-                                    2021-2023
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="experience__data">
-                            <div>
-                                <h3 class="experience__title">Associate Software Engineer</h3>
-                                <span class="experience__subtitle">Morningstar India Pvt. Ltd., Navi Mumbai</span>
-                                <div class="experience__calendar">
-                                    <i class='bx bxs-calendar'></i>
-                                    2019-2021
-                                </div>
-                            </div>
-
-                            <div>
-                                <span class="experience__rounder"></span>
-                                <span class="experience__line"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  <article class="journey__checkpoint journey__checkpoint--current" data-kind="Work">
+                     <div class="journey__marker" aria-hidden="true"><i class="ri-briefcase-line"></i></div>
+                     <div class="journey__card">
+                        <div class="journey__meta"><span>2025–Present</span><span>Current checkpoint</span></div>
+                        <h3>Assistant Vice President</h3>
+                        <p>Pune</p>
+                     </div>
+                  </article>
+               </div>
             </div>
          </section>
 
@@ -415,7 +404,7 @@
                      See my achievements and certificates earned.
                   </p>
 
-                  <a href="https://www.linkedin.com/in/kunal-purandare-a37611165/details/certifications/" target="_blank" class="button">See certificates</a>
+                  <a href="https://www.linkedin.com/in/kunal-purandare-a37611165/details/certifications/" target="_blank" rel="noopener noreferrer" class="button">See certificates</a>
                </div>
 
                <div class="certificates__content">
@@ -441,11 +430,11 @@
             <div class="contact__container container grid">
                   <form class="contact__form" id="contact-form">
                      <div class="contact__group">
-                        <input type="text" name="from_name" required placeholder="Enter your name" class="contact__input">
-                        <input type="email" name="from_email" required placeholder="Enter your email" class="contact__input">
+                        <input type="text" name="from_name" required autocomplete="name" aria-label="Your name" placeholder="Enter your name" class="contact__input">
+                        <input type="email" name="from_email" required autocomplete="email" aria-label="Your email" placeholder="Enter your email" class="contact__input">
                      </div>
 
-                     <textarea name="user_project"  required placeholder="Enter your message" class="contact__input"></textarea>
+                     <textarea name="user_project" required aria-label="Your message" placeholder="Enter your message" class="contact__input"></textarea>
                      <p class="contact__message" id="contact-message"></p>
                      <div class="g-recaptcha captcha__button" data-sitekey="6LcuUuUqAAAAAFXKW674ZCeZJ5oGPPuwz3HM0sbK" ></div>
                      <button type="submit" class="button contact__button">
@@ -470,15 +459,15 @@
             </div>
 
             <div class="footer__social">
-               <a href="https://www.facebook.com/kunalpurandare17" target="_blank" aria-label="Facebook" class="footer__social-link">
+               <a href="https://www.facebook.com/kunalpurandare17" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="footer__social-link">
                   <i class="ri-facebook-circle-line"></i>
                </a>
 
-               <a href="https://www.instagram.com/galaxy__moments/profilecard/?igsh=bXI0dnloeTduaHJt" target="_blank" aria-label="Instagram" class="footer__social-link">
+               <a href="https://www.instagram.com/galaxy__moments/profilecard/?igsh=bXI0dnloeTduaHJt" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer__social-link">
                   <i class="ri-instagram-line"></i>
                </a>
 
-               <a href="https://www.linkedin.com/in/kunal-purandare-a37611165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn" class="footer__social-link">
+               <a href="https://www.linkedin.com/in/kunal-purandare-a37611165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer__social-link">
                   <i class="ri-linkedin-box-line"></i>
                </a>
             </div>
@@ -506,6 +495,8 @@
          });
       })();
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
       <script src="assets/js/animation.js"></script>
       <script src="assets/js/portfolio-data.js"></script>
       <script src="assets/js/projects.js"></script>

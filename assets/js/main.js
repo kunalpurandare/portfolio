@@ -7,6 +7,7 @@ const navMenu = document.getElementById('nav-menu'),
 if(navToggle){
     navToggle.addEventListener('click', () =>{
         navMenu.classList.add('show-menu')
+        navToggle.setAttribute('aria-expanded', 'true')
     })
 }
 
@@ -14,6 +15,7 @@ if(navToggle){
 if(navClose){
     navClose.addEventListener('click', () =>{
         navMenu.classList.remove('show-menu')
+        navToggle?.setAttribute('aria-expanded', 'false')
     })
 }
 
@@ -24,6 +26,7 @@ const linkAction = () =>{
     const navMenu = document.getElementById('nav-menu')
     // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
+    navToggle?.setAttribute('aria-expanded', 'false')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
@@ -75,6 +78,7 @@ window.addEventListener('scroll', scrollUp)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
+let lastActiveSection = ''
     
 const scrollActive = () =>{
     const scrollDown = window.scrollY
@@ -89,6 +93,12 @@ const scrollActive = () =>{
 
 		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
 			sectionsClass.classList.add('active-link')
+			if (lastActiveSection !== sectionId) {
+				lastActiveSection = sectionId
+				const sectionName = sectionsClass.textContent.trim()
+				history.replaceState(null, '', `#${sectionId}`)
+				document.title = `${sectionName} | Kunal Purandare`
+			}
 		}else{
 			sectionsClass.classList.remove('active-link')
 		}                                                    
@@ -141,63 +151,20 @@ if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
     })
 }
 
-/*==================== Experience TABS ====================*/
-const tabs = document.querySelectorAll('[data-target]'),
-    tabContents = document.querySelectorAll('[data-content]')
+/*==================== DARK / LIGHT THEME ====================*/
+const bulb = document.getElementsByName('switch')
+const lightThemeClass = 'light-theme'
+const selectedTheme = localStorage.getItem('portfolio-theme-v2')
+const getCurrentTheme = () => document.body.classList.contains(lightThemeClass) ? 'light' : 'dark'
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.target);
+if (selectedTheme === 'light') document.body.classList.add(lightThemeClass)
 
-        tabContents.forEach(tabContent => {
-            tabContent.classList.remove('experience__active');
-        });
-
-        target.classList.add('experience__active');
-
-        tabs.forEach(tab => {
-            tab.classList.remove('experience__active');
-        })
-        tab.classList.add('experience__active');
-    })
-});
-
-// BULB
-let bulb = document.getElementsByName('switch');
-// console.log(bulb[0].getAttribute('value'))
-// console.log(bulb[1].getAttribute('checked'))
-// console.log(bulb[0].getAttribute('value'))
-// console.log(bulb[1].getAttribute('checked'))
-// bulb[0].addEventListener('click', () => {
-//     alert('Button was clicked! : '+bulb[0].getAttribute('value'));
-// });
-// bulb[1].addEventListener('click', () => {
-//     alert('Button was clicked! : '+bulb[1].getAttribute('value'));
-// });
-
-/*==================== DARK LIGHT THEME ====================*/ 
-// const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
-
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem('selected-theme')
-
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-}
-
-// Activate / deactivate the theme manually with the button
-bulb.forEach(b=>{
-
-    b.addEventListener('click', () => {
-        // Add or remove the dark / icon theme
-        document.body.classList.toggle(darkTheme)
-        // We save the theme and the current icon that the user chose
-        localStorage.setItem('selected-theme', getCurrentTheme())
+bulb.forEach(control => {
+    control.addEventListener('click', () => {
+        document.body.classList.toggle(lightThemeClass)
+        localStorage.setItem('portfolio-theme-v2', getCurrentTheme())
+        window.dispatchEvent(new CustomEvent('portfolio:themechange', {
+            detail: { theme: getCurrentTheme() }
+        }))
     })
 });
