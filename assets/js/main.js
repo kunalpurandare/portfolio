@@ -62,7 +62,7 @@ const sendEmail = (e) =>{
     }
 }
 
-contactForm.addEventListener('submit', sendEmail)
+if (contactForm) contactForm.addEventListener('submit', sendEmail)
 
 /*=============== SHOW SCROLL UP ===============*/ 
 const scrollUp = () =>{
@@ -85,6 +85,8 @@ const scrollActive = () =>{
             sectionId = current.getAttribute('id'),
             sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
 
+		if(!sectionsClass) return
+
 		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
 			sectionsClass.classList.add('active-link')
 		}else{
@@ -94,20 +96,50 @@ const scrollActive = () =>{
 }
 window.addEventListener('scroll', scrollActive)
 
-/*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({ 
-    origin: 'top',
-    distance: '60px',
-    duration: 2500,
-    delay: 400,
-    // reset: true
-})
+/*=============== IMMERSIVE UI ===============*/
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const progressBar = document.querySelector('.scroll-progress')
+const cursorGlow = document.querySelector('.cursor-glow')
 
-sr.reveal(`.home__data, .home__social, .contact__container, .footer__container`)
-sr.reveal(`.home__image`, {origin: 'bottom'})
-sr.reveal(`.about__data, .skills__data`, {origin: 'left'})
-sr.reveal(`.about__image, .skills__content`, {origin: 'right'})
-sr.reveal(`.services__card, .projects__card`, {interval: 100})
+const updateProgress = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight
+    if (progressBar) progressBar.style.transform = `scaleX(${scrollable > 0 ? window.scrollY / scrollable : 0})`
+}
+window.addEventListener('scroll', updateProgress, { passive: true })
+updateProgress()
+
+if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    window.addEventListener('pointermove', (event) => {
+        if (cursorGlow) {
+            cursorGlow.style.setProperty('--mouse-x', `${event.clientX}px`)
+            cursorGlow.style.setProperty('--mouse-y', `${event.clientY}px`)
+        }
+    }, { passive: true })
+
+    document.querySelectorAll('.tilt-card, .about__image, .certificates__content').forEach(card => {
+        card.addEventListener('pointermove', event => {
+            const rect = card.getBoundingClientRect()
+            const rotateX = ((event.clientY - rect.top) / rect.height - .5) * -10
+            const rotateY = ((event.clientX - rect.left) / rect.width - .5) * 10
+            card.style.setProperty('--rx', `${rotateX}deg`)
+            card.style.setProperty('--ry', `${rotateY}deg`)
+            card.style.setProperty('--shine-x', `${event.clientX - rect.left}px`)
+            card.style.setProperty('--shine-y', `${event.clientY - rect.top}px`)
+        })
+        card.addEventListener('pointerleave', () => {
+            card.style.setProperty('--rx', '0deg')
+            card.style.setProperty('--ry', '0deg')
+        })
+    })
+
+    document.querySelectorAll('.magnetic').forEach(button => {
+        button.addEventListener('pointermove', event => {
+            const rect = button.getBoundingClientRect()
+            button.style.transform = `translate(${(event.clientX - rect.left - rect.width / 2) * .12}px, ${(event.clientY - rect.top - rect.height / 2) * .12}px)`
+        })
+        button.addEventListener('pointerleave', () => button.style.transform = '')
+    })
+}
 
 /*==================== Experience TABS ====================*/
 const tabs = document.querySelectorAll('[data-target]'),
@@ -128,20 +160,6 @@ tabs.forEach(tab => {
         })
         tab.classList.add('experience__active');
     })
-});
-
-/*==================== PORTFOLIO SWIPER  ====================*/
-let swiper = new Swiper(".portfolio__container", {
-    cssMode: true,
-    loop: true,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
 });
 
 // BULB

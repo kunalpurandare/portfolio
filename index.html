@@ -10,15 +10,35 @@
       <!--=============== REMIXICONS ===============-->
       <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
 
-      <!--==================== SWIPER CSS ====================-->
-      <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="assets/css/styles.css">
 
       <title>Kunal Purandare</title>
    </head>
    <body>
+      <div class="ambient-scene" aria-hidden="true">
+         <div class="ambient-grid"></div>
+         <div class="ambient-orb ambient-orb--one"></div>
+         <div class="ambient-orb ambient-orb--two"></div>
+         <div class="cursor-glow"></div>
+      </div>
+      <div class="scroll-progress" aria-hidden="true"></div>
+      <div class="preloader" role="status" aria-label="Loading portfolio">
+         <div class="boot-loader">
+            <div class="boot-loader__topbar">
+               <span></span><span></span><span></span>
+               <small>portfolio.exe</small>
+            </div>
+            <div class="boot-loader__body">
+               <div class="boot-loader__mark"><span>&lt;</span>KP<span>/&gt;</span></div>
+               <p class="boot-line boot-line--one"><span>›</span> Initializing developer workspace</p>
+               <p class="boot-line boot-line--two"><span>›</span> Loading experience &amp; skills</p>
+               <p class="boot-line boot-line--three"><span>✓</span> Ready to build</p>
+               <div class="boot-loader__track"><span></span></div>
+               <div class="boot-loader__percent">0%</div>
+            </div>
+         </div>
+      </div>
       <!--==================== HEADER ====================-->
       <header class="header" id="header">
          <nav class="nav container">
@@ -33,6 +53,9 @@
                   </li>
                   <li class="nav__item">
                      <a href="#about" class="nav__link">About Me</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#projects" class="nav__link">Work</a>
                   </li>
                   <li class="nav__item">
                      <a href="#experience" class="nav__link">Experience</a>
@@ -69,6 +92,7 @@
             <div class="home__container container grid">
                <div class="home__content">
                   <div class="home__data">
+                     <div class="availability"><span></span> Available for ambitious projects</div>
                      <h3 class="home__subtitle">
                          Hello, <span>I'm</span>
                      </h3>
@@ -82,16 +106,20 @@
                          A passionate and skilled developer dedicated to building innovative solutions that solve real-world problems.
                          I specialize in developing scalable, high-performance applications that deliver exceptional user experiences.
                      </p>
+                     <div class="home__actions">
+                        <a href="#contact" class="button magnetic">Let's work together <i class="ri-arrow-right-up-line"></i></a>
+                        <a href="#projects" class="button button--ghost magnetic">View featured work</a>
+                     </div>
                  </div>
 
                   <div class="home__social">
-                     <a href="https://www.facebook.com/kunalpurandare17" target="_blank"  class="home__social-link">
+                     <a href="https://www.facebook.com/kunalpurandare17" target="_blank" aria-label="Facebook" class="home__social-link">
                         <i class="ri-facebook-fill"></i>
                      </a>
-                     <a href="https://www.instagram.com/galaxy__moments/profilecard/?igsh=bXI0dnloeTduaHJt" target="_blank" class="home__social-link">
+                     <a href="https://www.instagram.com/galaxy__moments/profilecard/?igsh=bXI0dnloeTduaHJt" target="_blank" aria-label="Instagram" class="home__social-link">
                         <i class="ri-instagram-line"></i>
                      </a>
-                     <a href="https://www.linkedin.com/in/kunal-purandare-a37611165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="home__social-link">
+                     <a href="https://www.linkedin.com/in/kunal-purandare-a37611165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn" class="home__social-link">
                         <i class="ri-linkedin-box-line"></i>
                      </a>
                   </div>
@@ -131,12 +159,6 @@
                         <image class="home__img" id="imageBlob" width="640" height="925" href="assets/img/home.png"/>
                         </defs>
                      
-                        <!-- <defs> 
-                           <clipPath id="circleClip">
-                              <circle cx="275" cy="295.5" r="275" />
-                           </clipPath>
-                        </defs>
-                        <image class="home__img" id="imageBlob" href="assets/img/profile-pic.jpg" width="550" height="800" preserveAspectRatio="xMidYMid slice" clip-path="url(#circleClip)" /> --> -->
                   </svg>
                </div>
 
@@ -168,7 +190,7 @@
                      My <span>Introduction</span>
                   </h3>
 
-                  <h2 clh2s="section__title">
+                  <h2 class="section__title about__title">
                      About Me
                   </h2>
 
@@ -178,7 +200,7 @@
                   <div class="about__info">
                      <div>
                          <span class="about__info-title">05+</span>
-                         <span class="about__info-name">Year's of Industry<br>Experience</span>
+                         <span class="about__info-name">Years of Industry<br>Experience</span>
                      </div>
                      <div>
                          <span class="about__info-title">10+</span>
@@ -209,6 +231,22 @@
                      <image class="about__img" href="assets/img/about.png" width="450" height="450" preserveAspectRatio="xMidYMid slice" clip-path="url(#circleClip)"/>
                   </svg>
                </div>
+            </div>
+         </section>
+
+         <!--==================== FEATURED WORK ====================-->
+         <section class="projects section" id="projects">
+            <div class="projects__heading container">
+               <div>
+                  <h3 class="section__subtitle projects__subtitle">Selected <span>engineering work</span></h3>
+                  <h2 class="section__title projects__title">Featured Work</h2>
+               </div>
+               <p class="projects__intro">
+                  A focused look at the self-hosted system I’m building to bring everyday tools and personal information into one dependable workspace.
+               </p>
+            </div>
+            <div class="projects__container container" id="projects-grid" aria-live="polite">
+               <noscript>Please enable JavaScript to view the featured project details.</noscript>
             </div>
          </section>
          
@@ -334,7 +372,7 @@
             </h2>
 
             <div class="skills__container container grid">
-               <article class="skills__card">
+               <article class="skills__card tilt-card">
                   <i class="ri-code-s-slash-line skills__icon"></i>
                   <h2 class="skills__title">Frontend</h2>
                   <p class="skills__description">
@@ -342,7 +380,7 @@
                   </p>
                </article>
 
-               <article class="skills__card">
+               <article class="skills__card tilt-card">
                   <i class="ri-global-line skills__icon"></i>
                   <h2 class="skills__title">Backend</h2>
                   <p class="skills__description">
@@ -351,11 +389,11 @@
                   </p>
                </article>
 
-               <article class="skills__card">
+               <article class="skills__card tilt-card">
                   <i class="ri-cloud-line skills__icon"></i>
                   <h2 class="skills__title">AWS</h2>
                   <p class="skills__description">
-                     AWS-certified professional with hands-on experience in architecting scalable, secure, and cost-effective cloud solutions..
+                     AWS-certified professional with hands-on experience in architecting scalable, secure, and cost-effective cloud solutions.
                   </p>
                </article>
             </div>
@@ -432,15 +470,15 @@
             </div>
 
             <div class="footer__social">
-               <a href="https://www.facebook.com/kunalpurandare17" target="_blank" class="footer__social-link">
+               <a href="https://www.facebook.com/kunalpurandare17" target="_blank" aria-label="Facebook" class="footer__social-link">
                   <i class="ri-facebook-circle-line"></i>
                </a>
 
-               <a href="https://www.instagram.com/galaxy__moments/profilecard/?igsh=bXI0dnloeTduaHJt" target="_blank" class="footer__social-link">
-                  <i class="ri-github-fill"></i>
+               <a href="https://www.instagram.com/galaxy__moments/profilecard/?igsh=bXI0dnloeTduaHJt" target="_blank" aria-label="Instagram" class="footer__social-link">
+                  <i class="ri-instagram-line"></i>
                </a>
 
-               <a href="https://www.linkedin.com/in/kunal-purandare-a37611165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="home__social-link">
+               <a href="https://www.linkedin.com/in/kunal-purandare-a37611165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn" class="footer__social-link">
                   <i class="ri-linkedin-box-line"></i>
                </a>
             </div>
@@ -450,16 +488,11 @@
             </span>
          </div>
       </footer>
-
       <!--========== SCROLL UP ==========-->
       <a href="#" class="scrollup" id="scroll-up">
          <i class="ri-arrow-up-line"></i>
       </a>
 
-      <!--==================== SWIPER JS ====================-->
-      <script src="assets/js/swiper-bundle.min.js"></script>
-      <!--=============== SCROLLREVEAL ===============-->
-      <script src="assets/js/scrollreveal.min.js"></script>
       <!--=============== RECAPTCHA ===============-->
       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       <!--=============== EMAIL JS ===============-->
@@ -473,6 +506,9 @@
          });
       })();
       </script>
+      <script src="assets/js/animation.js"></script>
+      <script src="assets/js/portfolio-data.js"></script>
+      <script src="assets/js/projects.js"></script>
       <!--=============== MAIN JS ===============-->
       <script src="assets/js/main.js"></script>
    </body>
