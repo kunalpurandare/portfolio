@@ -55,6 +55,7 @@
          <div class="cursor-glow"></div>
       </div>
       <div class="scroll-progress" aria-hidden="true"></div>
+      <div class="cursor-label" aria-hidden="true">View case study</div>
       <div class="preloader" role="status" aria-label="Loading portfolio">
          <div class="boot-loader">
             <div class="boot-loader__topbar">
@@ -63,11 +64,15 @@
             </div>
             <div class="boot-loader__body">
                <div class="boot-loader__mark"><span>&lt;</span>KP<span>/&gt;</span></div>
-               <p class="boot-line boot-line--one"><span>›</span> Initializing developer workspace</p>
-               <p class="boot-line boot-line--two"><span>›</span> Loading experience &amp; skills</p>
-               <p class="boot-line boot-line--three"><span>✓</span> Ready to build</p>
+               <div class="boot-loader__terminal" aria-hidden="true">
+                  <p class="boot-line boot-line--one"><span>❯</span><code data-text="boot portfolio.kernel"></code><b class="boot-cursor"></b></p>
+                  <p class="boot-line boot-line--two"><span>0x01</span><code data-text="mounting projects ........ OK"></code></p>
+                  <p class="boot-line boot-line--three"><span>0x02</span><code data-text="compiling experience ..... OK"></code></p>
+                  <p class="boot-line boot-line--four"><span>0x03</span><code data-text="connecting creativity .... OK"></code></p>
+                  <p class="boot-line boot-line--five"><span>✓</span><code data-text="system ready — launch --portfolio"></code></p>
+               </div>
                <div class="boot-loader__track"><span></span></div>
-               <div class="boot-loader__percent">0%</div>
+               <div class="boot-loader__status"><code>[<span class="boot-loader__blocks"></span>]</code><div class="boot-loader__percent">0%</div></div>
             </div>
          </div>
       </div>
@@ -88,6 +93,9 @@
                   </li>
                   <li class="nav__item">
                      <a href="#experience" class="nav__link">Career</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#projects" class="nav__link">Projects</a>
                   </li>
                   <li class="nav__item">
                      <a href="#skills" class="nav__link">Skills</a>
@@ -165,6 +173,7 @@
                </div>  
 
                <div class="home__image">
+                  <span class="home__tech-badge" aria-hidden="true"><i class="ri-code-s-slash-line"></i> Python</span>
                   <svg class="home__blob" viewBox="0 0 550 591" xmlns="http://www.w3.org/2000/svg">
                      <mask id="maskBlob" mask-type="alpha">
                         <path d="M263 47.1782C270.426 42.891 279.574 42.891 287 47.1782L501.157 
@@ -275,6 +284,33 @@
             </div>
          </section>
 
+         <!--==================== PROJECTS ====================-->
+         <section class="projects section" id="projects">
+            <div class="projects__heading container">
+               <div>
+                  <p class="section__subtitle">Selected work</p>
+                  <h2 class="section__title projects__title">Built to be useful</h2>
+               </div>
+               <p class="projects__intro">A closer look at a product I am designing, building, and operating—from backend architecture to the everyday interface.</p>
+            </div>
+            <div class="projects__container container" id="projects-grid">
+               <noscript>Enable JavaScript to view selected projects.</noscript>
+            </div>
+            <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title">
+               <button class="project-dialog__close" type="button" aria-label="Close case study"><i class="ri-close-line"></i></button>
+               <p class="project-dialog__eyebrow">Selected case study</p>
+               <h3 id="project-dialog-title"></h3>
+               <p class="project-dialog__summary"></p>
+               <div class="project-dialog__grid">
+                  <section><span>Responsibilities</span><p class="project-dialog__responsibilities"></p></section>
+                  <section><span>Architecture</span><p class="project-dialog__architecture"></p></section>
+                  <section><span>Challenge</span><p class="project-dialog__challenge"></p></section>
+                  <section><span>Outcome</span><p class="project-dialog__outcome"></p></section>
+               </div>
+               <ul class="project-dialog__stack" aria-label="Technology stack"></ul>
+            </dialog>
+         </section>
+
          <!--==================== skills ====================-->
          <section class="skills section" id="skills">
             <h3 class="section__subtitle">
@@ -292,6 +328,7 @@
                   <p class="skills__description">
                      Frontend Developer expertise in building dynamic, user-centric web applications using modern technologies.                     
                   </p>
+                  <ul class="skills__tools"><li><span>Angular</span><i style="--level:92%"></i></li><li><span>TypeScript</span><i style="--level:88%"></i></li><li><span>UI systems</span><i style="--level:84%"></i></li></ul>
                </article>
 
                <article class="skills__card tilt-card">
@@ -301,6 +338,7 @@
                      Seasoned Backend Developer skilled in designing and developing scalable, robust server-side architectures,
                      optimizing RESTful APIs, managing databases, and deliver high-performance applications.                  
                   </p>
+                  <ul class="skills__tools"><li><span>Python</span><i style="--level:91%"></i></li><li><span>REST APIs</span><i style="--level:90%"></i></li><li><span>Databases</span><i style="--level:82%"></i></li></ul>
                </article>
 
                <article class="skills__card tilt-card">
@@ -309,6 +347,7 @@
                   <p class="skills__description">
                      AWS-certified professional with hands-on experience in architecting scalable, secure, and cost-effective cloud solutions.
                   </p>
+                  <ul class="skills__tools"><li><span>AWS</span><i style="--level:88%"></i></li><li><span>Docker</span><i style="--level:80%"></i></li><li><span>Architecture</span><i style="--level:85%"></i></li></ul>
                </article>
             </div>
          </section>
@@ -454,6 +493,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
       <script src="assets/js/animation.js"></script>
       <script src="assets/js/portfolio-data.js"></script>
+      <script src="assets/js/projects.js"></script>
       <script src="assets/js/personal.js"></script>
       <!--=============== MAIN JS ===============-->
       <script src="assets/js/main.js"></script>

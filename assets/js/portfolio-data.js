@@ -1,4 +1,16 @@
 window.portfolioData = Object.freeze({
+    projects: [
+        {
+            id: 'nexus', number: '01 / Featured', status: 'Active build', featured: true,
+            eyebrow: 'Personal product · Full stack', title: 'NEXUS — Personal Life OS',
+            description: 'A self-hosted workspace that brings finances, tasks, calendar events, travel, media, useful links, and personal information into one focused interface.',
+            stack: ['FastAPI', 'SQLite', 'Docker', 'Jinja2', 'PWA'],
+            responsibilities: 'Product design, frontend and backend development, infrastructure, data modelling, and ongoing operations.',
+            architecture: 'A modular FastAPI application with SQLite persistence, server-rendered Jinja2 views, PWA capabilities, and containerised deployment.',
+            challenge: 'Combining many distinct personal workflows without turning the interface or underlying data model into a collection of disconnected tools.',
+            outcome: 'One private, dependable dashboard with a consistent workflow and an architecture that can grow one module at a time.'
+        }
+    ],
     careerJourney: [
         {
             dates: '2014–2018', year: '2014', role: 'B.E — Bachelor Degree',

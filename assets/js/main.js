@@ -171,6 +171,17 @@ if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
         })
         button.addEventListener('pointerleave', () => button.style.transform = '')
     })
+
+    const cursorLabel = document.querySelector('.cursor-label')
+    if (cursorLabel && typeof window.gsap !== 'undefined') {
+        const cursorX = gsap.quickTo(cursorLabel, 'x', { duration: .18, ease: 'power2.out' })
+        const cursorY = gsap.quickTo(cursorLabel, 'y', { duration: .18, ease: 'power2.out' })
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('pointerenter', () => cursorLabel.classList.add('is-visible'))
+            card.addEventListener('pointermove', event => { cursorX(event.clientX + 16); cursorY(event.clientY + 16) })
+            card.addEventListener('pointerleave', () => cursorLabel.classList.remove('is-visible'))
+        })
+    }
 }
 
 /*==================== DARK / LIGHT THEME ====================*/

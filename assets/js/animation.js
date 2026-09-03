@@ -19,6 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger)
     document.documentElement.classList.add('gsap-enabled')
     setupThemeMotion()
+    const bootLines = [...document.querySelectorAll('.boot-line code[data-text]')]
+    bootLines.forEach(line => { line.textContent = '' })
+    const typeBootLine = (line, duration) => {
+        const state = { count: 0 }
+        const value = line.dataset.text || ''
+        return gsap.to(state, {
+            count: value.length,
+            duration,
+            ease: 'none',
+            onUpdate: () => { line.textContent = value.slice(0, Math.round(state.count)) }
+        })
+    }
     const loadState = { value: 0 }
     const loaderTimeline = gsap.timeline({
         defaults: { ease: 'power2.out' },
@@ -30,18 +42,25 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     loaderTimeline
+        .add(typeBootLine(bootLines[0], .42), .3)
+        .add(typeBootLine(bootLines[1], .38), .85)
+        .add(typeBootLine(bootLines[2], .42), 1.4)
+        .add(typeBootLine(bootLines[3], .42), 2)
+        .add(typeBootLine(bootLines[4], .5), 2.7)
         .to(loadState, {
             value: 100,
             duration: 3.6,
             ease: 'power1.inOut',
             onUpdate: () => { if (percent) percent.textContent = `${Math.round(loadState.value)}%` }
         }, 0)
-        .to('.boot-loader', { y: -12, scale: .985, opacity: 0, duration: .45 }, 3.6)
-        .to('.preloader', { opacity: 0, duration: .5 }, 3.72)
+        .to('.boot-loader', { y: -8, scale: .985, opacity: 0, duration: .35 }, 3.55)
+        .fromTo('.home__container', { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: .65, ease: 'power3.out' }, 3.58)
+        .to('.preloader', { clipPath: 'inset(50% 0 50% 0)', duration: .7, ease: 'power4.inOut' }, 3.68)
 
     function initPageMotion() {
         const heroTyping = prepareHeroTitle()
         setupNavigationIndicator()
+        setupHeroParallax()
 
         gsap.from('.home__data > *', { y: 24, opacity: 0, duration: .65, stagger: .08, ease: 'power3.out' })
         if (heroTyping) {
@@ -144,6 +163,27 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    function setupHeroParallax() {
+        const hero = document.querySelector('.home')
+        const portrait = hero?.querySelector('.home__image')
+        if (!hero || !portrait || !window.matchMedia('(pointer: fine)').matches) return
+
+        const moveX = gsap.quickTo(portrait, 'x', { duration: .8, ease: 'power3.out' })
+        const moveY = gsap.quickTo(portrait, 'y', { duration: .8, ease: 'power3.out' })
+        const rotate = gsap.quickTo(portrait, 'rotationY', { duration: .8, ease: 'power3.out' })
+
+        hero.addEventListener('pointermove', event => {
+            const x = event.clientX / window.innerWidth - .5
+            const y = event.clientY / window.innerHeight - .5
+            moveX(x * 14)
+            moveY(y * 10)
+            rotate(x * 3)
+        })
+        hero.addEventListener('pointerleave', () => {
+            moveX(0); moveY(0); rotate(0)
+        })
+    }
+
     function prepareHeroTitle() {
         const title = document.querySelector('.home__title')
         if (!title || title.querySelector('.typewriter-line')) return null
@@ -206,8 +246,10 @@ document.addEventListener('DOMContentLoaded', () => {
             .from(widgets, { y: 12, opacity: 0, scale: .94, duration: .4, stagger: .06, ease: 'power2.out' }, '-=.35')
             .from(tags, { y: 8, opacity: 0, duration: .32, stagger: .045 }, '-=.25')
             .fromTo(status, { scale: .9 }, { scale: 1, duration: .42, ease: 'back.out(2)' }, '-=.2')
+            .from('.dashboard-preview__chart span', { scaleY: 0, transformOrigin: 'bottom', duration: .5, stagger: .045, ease: 'power2.out' }, '-=.45')
         if (preview) gsap.to(preview, {
-            yPercent: -5,
+            yPercent: -7,
+            rotationX: -1.5,
             ease: 'none',
             scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: .8 }
         })
@@ -224,6 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.forEach((card, index) => {
             timeline.from(card.querySelector('.skills__icon'), { scale: .72, rotate: -6, opacity: 0, duration: .4, ease: 'back.out(1.8)' }, .18 + index * .12)
             timeline.from(card.querySelectorAll('.skills__title, .skills__description'), { y: 10, opacity: 0, duration: .35, stagger: .06 }, .26 + index * .12)
+            timeline.from(card.querySelectorAll('.skills__tools i'), { scaleX: 0, transformOrigin: 'left', duration: .5, stagger: .08, ease: 'power2.out' }, .34 + index * .12)
         })
     }
 
