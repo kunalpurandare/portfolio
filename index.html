@@ -87,16 +87,16 @@
                      <a href="#about" class="nav__link">About Me</a>
                   </li>
                   <li class="nav__item">
-                     <a href="#projects" class="nav__link">Work</a>
-                  </li>
-                  <li class="nav__item">
-                     <a href="#experience" class="nav__link">Experience</a>
+                     <a href="#experience" class="nav__link">Career</a>
                   </li>
                   <li class="nav__item">
                      <a href="#skills" class="nav__link">Skills</a>
                   </li>
                   <li class="nav__item">
                      <a href="#certificates" class="nav__link">Certificates</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#life" class="nav__link">Life Outside Code</a>
                   </li>
                   <li class="nav__item">
                      <a href="#contact" class="nav__link">Contact</a>
@@ -109,6 +109,13 @@
                </button>
             </div>
 
+            <div id="lampadario">
+               <input type="radio" name="switch" value="on" aria-label="Use dark theme" checked="checked" />
+               <input type="radio" name="switch" value="off" aria-label="Use light theme" />
+               <label for="switch"></label>
+               <div id="filo"></div>
+               <div id="lampadina"><div id="sorpresa"></div></div>
+            </div>
 
             <!-- Toggle -->
             <button class="nav__toggle" id="nav-toggle" type="button" aria-label="Open navigation menu" aria-controls="nav-menu" aria-expanded="false">
@@ -140,7 +147,7 @@
                      </p>
                      <div class="home__actions">
                         <a href="#contact" class="button magnetic">Let's work together <i class="ri-arrow-right-up-line"></i></a>
-                        <a href="#projects" class="button button--ghost magnetic">View featured work</a>
+                        <a href="#life" class="button button--ghost magnetic">Explore beyond code</a>
                      </div>
                  </div>
 
@@ -193,23 +200,6 @@
                      
                   </svg>
                </div>
-
-               <div id="lampadario">
-                  <input type="radio" name="switch" value="on" aria-label="Use dark theme" checked="checked" />
-                  <input type="radio" name="switch" value="off" aria-label="Use light theme" />
-                  <label for="switch"></label>
-                  <div id="filo"></div>
-                  <div id="lampadina">             
-                    <div id="sorpresa">
-                      <!-- <div id="footer">
-                        You turned me on!
-                      </div>
-                      <div id="shadow">
-                          You turned me on!
-                      </div> -->
-                    </div>
-                  </div>
-              </div>
 
             </div>
          </section>
@@ -266,86 +256,21 @@
             </div>
          </section>
 
-         <!--==================== FEATURED WORK ====================-->
-         <section class="projects section" id="projects">
-            <div class="projects__heading container">
-               <div>
-                  <h3 class="section__subtitle projects__subtitle">Selected <span>engineering work</span></h3>
-                  <h2 class="section__title projects__title">Featured Work</h2>
-               </div>
-               <p class="projects__intro">
-                  A focused look at the self-hosted system I’m building to bring everyday tools and personal information into one dependable workspace.
-               </p>
-            </div>
-            <div class="projects__container container" id="projects-grid" aria-live="polite">
-               <noscript>Please enable JavaScript to view the featured project details.</noscript>
-            </div>
-         </section>
-         
          <!--==================== Experience ====================-->
          <section class="experience section" id="experience">
-            <h3 class="section__subtitle">My personal <span>journey</span></h3>
-            <h2 class="section__title">Experience &amp; Education</h2>
-
+            <div class="section-heading container">
+               <p class="section__subtitle">Career</p>
+               <h2 class="section__title">Career Journey</h2>
+               <p class="section-heading__intro">From building strong engineering foundations to owning increasingly complex systems, my career has been shaped by continuous learning and practical problem-solving.</p>
+            </div>
+            <div class="career-highlights container" aria-label="Career highlights">
+               <div><strong>7+</strong><span>Years of industry experience</span></div>
+               <div><strong>Current</strong><span>Assistant Vice President</span></div>
+               <div><strong>Pune</strong><span>Current location</span></div>
+            </div>
             <div class="experience__container container">
-               <div class="journey" aria-label="Career and education timeline">
-                  <div class="journey__rail" aria-hidden="true"><span class="journey__progress"></span></div>
-
-                  <article class="journey__checkpoint" data-kind="Education">
-                     <div class="journey__marker" aria-hidden="true"><i class="ri-graduation-cap-line"></i></div>
-                     <div class="journey__card">
-                        <div class="journey__meta"><span>2014–2018</span><span>Education</span></div>
-                        <h3>B.E — Bachelor Degree</h3>
-                        <p>E &amp; TC</p>
-                        <p>Smt. Kashibai Navale College of Engg., Sinhgad Campus, Pune</p>
-                     </div>
-                  </article>
-
-                  <article class="journey__checkpoint" data-kind="Education">
-                     <div class="journey__marker" aria-hidden="true"><i class="ri-graduation-cap-line"></i></div>
-                     <div class="journey__card">
-                        <div class="journey__meta"><span>2018–2019</span><span>Education</span></div>
-                        <h3>CDAC — PGDAC</h3>
-                        <p>Post Graduate Diploma in Advance Computing</p>
-                        <p>D.Y. Patil, Akurdi, Pune</p>
-                     </div>
-                  </article>
-
-                  <article class="journey__checkpoint" data-kind="Work">
-                     <div class="journey__marker" aria-hidden="true"><i class="ri-briefcase-line"></i></div>
-                     <div class="journey__card">
-                        <div class="journey__meta"><span>2019–2021</span><span>Work</span></div>
-                        <h3>Associate Software Engineer</h3>
-                        <p>Morningstar India Pvt. Ltd., Navi Mumbai</p>
-                     </div>
-                  </article>
-
-                  <article class="journey__checkpoint" data-kind="Work">
-                     <div class="journey__marker" aria-hidden="true"><i class="ri-briefcase-line"></i></div>
-                     <div class="journey__card">
-                        <div class="journey__meta"><span>2021–2023</span><span>Work</span></div>
-                        <h3>Software Engineer</h3>
-                        <p>Morningstar India Pvt. Ltd., Navi Mumbai</p>
-                     </div>
-                  </article>
-
-                  <article class="journey__checkpoint" data-kind="Work">
-                     <div class="journey__marker" aria-hidden="true"><i class="ri-briefcase-line"></i></div>
-                     <div class="journey__card">
-                        <div class="journey__meta"><span>2023–2025</span><span>Work</span></div>
-                        <h3>Senior Software Engineer</h3>
-                        <p>Morningstar India Pvt. Ltd., Navi Mumbai</p>
-                     </div>
-                  </article>
-
-                  <article class="journey__checkpoint journey__checkpoint--current" data-kind="Work">
-                     <div class="journey__marker" aria-hidden="true"><i class="ri-briefcase-line"></i></div>
-                     <div class="journey__card">
-                        <div class="journey__meta"><span>2025–Present</span><span>Current checkpoint</span></div>
-                        <h3>Assistant Vice President</h3>
-                        <p>Pune</p>
-                     </div>
-                  </article>
+               <div class="journey" id="career-journey" aria-label="Professional career timeline">
+                  <noscript>Enable JavaScript to view the career journey.</noscript>
                </div>
             </div>
          </section>
@@ -415,6 +340,36 @@
                   </ol>
                </div>
             </div>
+         </section>
+
+         <!--==================== LIFE OUTSIDE CODE ====================-->
+         <section class="life section" id="life">
+            <div class="section-heading container">
+               <p class="section__subtitle">Beyond work</p>
+               <h2 class="section__title">Life Outside Code</h2>
+               <p class="section-heading__intro">The interests and hands-on pursuits that keep curiosity moving beyond software.</p>
+            </div>
+            <div class="personal-snapshot container" aria-label="At a glance">
+               <span><i class="ri-map-pin-line" aria-hidden="true"></i>Based in Pune</span>
+               <span><i class="ri-code-s-slash-line" aria-hidden="true"></i>Software Engineer</span>
+               <span><i class="ri-server-line" aria-hidden="true"></i>Self-hosting enthusiast</span>
+            </div>
+            <div class="life__grid container" id="life-grid"><noscript>Enable JavaScript to view interests outside code.</noscript></div>
+            <dialog class="life-dialog" id="life-dialog" aria-labelledby="life-dialog-title">
+               <button class="life-dialog__close" type="button" aria-label="Close details"><i class="ri-close-line" aria-hidden="true"></i></button>
+               <div class="life-dialog__icon" aria-hidden="true"><i></i></div>
+               <p class="life-dialog__meta"></p>
+               <h3 id="life-dialog-title"></h3>
+               <p class="life-dialog__project"></p>
+               <p class="life-dialog__summary"></p>
+               <section class="life-dialog__games" aria-labelledby="completed-games-title" hidden>
+                  <h4 id="completed-games-title">Completed games</h4>
+                  <div class="life-dialog__game-track"></div>
+               </section>
+               <ul class="life-dialog__stack" aria-label="Technology stack"></ul>
+               <div class="life-dialog__media" hidden></div>
+               <a class="life-dialog__cta" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
+            </dialog>
          </section>
 
          <!--==================== CONTACT ====================-->
@@ -499,7 +454,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
       <script src="assets/js/animation.js"></script>
       <script src="assets/js/portfolio-data.js"></script>
-      <script src="assets/js/projects.js"></script>
+      <script src="assets/js/personal.js"></script>
       <!--=============== MAIN JS ===============-->
       <script src="assets/js/main.js"></script>
    </body>

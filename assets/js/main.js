@@ -8,6 +8,8 @@ if(navToggle){
     navToggle.addEventListener('click', () =>{
         navMenu.classList.add('show-menu')
         navToggle.setAttribute('aria-expanded', 'true')
+        document.body.classList.add('menu-open')
+        navClose?.focus()
     })
 }
 
@@ -16,6 +18,8 @@ if(navClose){
     navClose.addEventListener('click', () =>{
         navMenu.classList.remove('show-menu')
         navToggle?.setAttribute('aria-expanded', 'false')
+        document.body.classList.remove('menu-open')
+        navToggle?.focus()
     })
 }
 
@@ -27,8 +31,26 @@ const linkAction = () =>{
     // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
     navToggle?.setAttribute('aria-expanded', 'false')
+    document.body.classList.remove('menu-open')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && navMenu?.classList.contains('show-menu')) {
+        navMenu.classList.remove('show-menu')
+        navToggle?.setAttribute('aria-expanded', 'false')
+        document.body.classList.remove('menu-open')
+        navToggle?.focus()
+    }
+})
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && navMenu?.classList.contains('show-menu')) {
+        navMenu.classList.remove('show-menu')
+        navToggle?.setAttribute('aria-expanded', 'false')
+        document.body.classList.remove('menu-open')
+    }
+})
 
 
 /*=============== ADD BLUR TO HEADER ===============*/

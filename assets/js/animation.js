@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setupProjectMotion()
         setupSkillsMotion()
         setupAwardsMotion()
+        setupPersonalMotion()
         setupContactMotion()
 
         const journey = document.querySelector('.journey')
@@ -108,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 timeline
                     .fromTo(marker, { scale: .55, opacity: .35 }, { scale: 1, opacity: 1, duration: .35 })
-                    .fromTo(card, { x: index % 2 ? 24 : -24, opacity: .25 }, { x: 0, opacity: 1, duration: .65 }, 0)
+                    .fromTo(card, { y: 18, opacity: .25 }, { y: 0, opacity: 1, duration: .65 }, 0)
                     .to(marker, { boxShadow: '0 0 0 9px rgba(25,211,174,.08), 0 0 24px var(--first-color)', duration: .3 }, .2)
 
                 ScrollTrigger.create({
@@ -252,9 +253,31 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    function setupPersonalMotion() {
+        const groups = [
+            { trigger: '.career-highlights', targets: '.career-highlights > div' },
+            { trigger: '.life__grid', targets: '.life-card' }
+        ]
+
+        groups.forEach(group => {
+            const trigger = document.querySelector(group.trigger)
+            const targets = document.querySelectorAll(group.targets)
+            if (!trigger || !targets.length) return
+            gsap.from(targets, {
+                scrollTrigger: { trigger, start: 'top 86%', once: true },
+                y: 20,
+                opacity: 0,
+                duration: .5,
+                stagger: .08,
+                ease: 'power2.out',
+                clearProps: 'transform,opacity'
+            })
+        })
+    }
+
     function setupThemeMotion() {
         window.addEventListener('portfolio:themechange', () => {
-            const targets = '.header .nav, .about__data, .project-card, .experience__container, .skills__card, .certificates__container, .contact__form'
+            const targets = '.header .nav, .about__data, .project-card, .experience__container, .now-card, .life-card, .skills__card, .certificates__container, .contact__form'
             gsap.fromTo(targets,
                 { filter: 'brightness(1.12)', scale: .997 },
                 { filter: 'brightness(1)', scale: 1, duration: .55, ease: 'power2.out', clearProps: 'filter,scale', stagger: .018 }
